@@ -3,7 +3,7 @@ class CreateAlbums < ActiveRecord::Migration
     create_table :albums do |t|
       t.string :name
       t.string :artist
-      t.string :description
+      t.text :description
       t.integer :votes
 
       t.timestamps null: false
