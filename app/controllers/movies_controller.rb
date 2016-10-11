@@ -13,9 +13,12 @@ class MoviesController < ApplicationController
   end
 
   def edit
+    movie
   end
 
   def update
+    movie.update_attributes(movie_params)
+    redirect_to movie_path
   end
 
   def new
@@ -35,4 +38,10 @@ class MoviesController < ApplicationController
     @movie.save
     redirect_to :movies
   end
+
+private
+ def movie_params
+   #Tells Rails which parameters can be changed
+   params.require(:movie).permit( :name, :director, :description, :votes)
+ end
 end
