@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   get 'media_ranker/index'
 
     root to: 'mediaranker#index'
-
+     resources :mediarankers
      resources :movies
      resources :books
      resources :albums
