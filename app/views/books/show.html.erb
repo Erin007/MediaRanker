@@ -6,10 +6,12 @@
     <p>Votes: <%=@book.votes %></p>
     <p><%= @book.description%></p>
 
-
     <%= button_to "Edit", {action: "edit", id: @book[:id] }, method: :get %>
+
     <%= button_to "Delete", {action: "destroy", id: @book[:id] }, method: :delete, data: { confirm: "Do you really want to delete this book?"} %>
+
     <%= link_to( "View All Books", books_path) %>
+
     <%= link_to( "View All Media", root_path) %>
   </section>
 

@@ -19,6 +19,7 @@ class MoviesController < ApplicationController
   end
 
   def new
+    @movie = Movie.new
   end
 
   def destroy
@@ -27,5 +28,11 @@ class MoviesController < ApplicationController
   end
 
   def create
+    @movie = Movie.new(name:params[:movie][:name],
+                     director:params[:movie][:director],
+                     description:params[:movie][:description],
+                     votes: 0)
+    @movie.save
+    redirect_to :movies
   end
 end
