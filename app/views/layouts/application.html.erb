@@ -7,8 +7,19 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+  <h1 class="all-page-header"><%= link_to("Media Ranker", root_path)%></h1>
+  <hr>
+</header>
 
 <%= yield %>
 
+<footer>
+  <hr>
+<p>
+  &copy Erin 2016 
+</p>
+
+</footer>
 </body>
 </html>
