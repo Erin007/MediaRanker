@@ -12,9 +12,12 @@ class BooksController < ApplicationController
   end
 
   def edit
+    book
   end
 
   def update
+    book.update_attributes(book_params)
+    redirect_to book_path
   end
 
   def new
@@ -33,8 +36,13 @@ class BooksController < ApplicationController
                      votes: 0)
    @book.save
    redirect_to :books
-
   end
+
+private
+   def book_params
+     #Tells Rails which parameters can be changed
+     params.require(:book).permit( :name, :author, :description, :votes)
+   end
 
 
 end
