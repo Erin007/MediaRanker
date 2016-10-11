@@ -1,11 +1,18 @@
 class MoviesController < ApplicationController
+
+  def movie
+    @movie ||= Movie.find(params[:id].to_i)
+  end
+
   def index
+    @movies = Movie.order(:votes).reverse_order
   end
 
   def show
+    movie
   end
 
-  def eidt
+  def edit
   end
 
   def update
