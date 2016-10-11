@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'books/index'
+
+  get 'books/show'
+
+  get 'books/eidt'
+
+  get 'books/update'
+
+  get 'books/new'
+
+  get 'books/destroy'
+
+  get 'books/create'
+
   get 'movies/index'
 
   get 'movies/show'
