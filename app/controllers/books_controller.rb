@@ -22,6 +22,8 @@ class BooksController < ApplicationController
   end
 
   def destroy
+    book.destroy
+    redirect_to :books
   end
 
   def create
