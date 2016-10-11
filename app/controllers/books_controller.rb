@@ -1,9 +1,14 @@
 class BooksController < ApplicationController
+  def book
+    @book ||= Book.find(params[:id].to_i)
+  end
+
   def index
-    @books = Book.order(:votes)
+    @books = Book.order(:votes).reverse_order
   end
 
   def show
+    book
   end
 
   def edit
