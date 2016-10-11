@@ -1,7 +1,17 @@
 <h1>Top 10 Movies</h1>
+
   <p><%=link_to("See more...", movies_path)%></p>
 
 <h1>Top 10 Books</h1>
+
+  <% books = Book.all %>
+
+  <%books.sort { |a,b| a.votes <=> b.votes }%>
+
+  <%10.times do%>
+    <h2><%= link_to( books.name,  book_path(:id)) %></h2>
+  <%end%>
+
   <p><%=link_to("See more...", books_path)%></p>
 
 <h1>Top 10 Albums</h1>
