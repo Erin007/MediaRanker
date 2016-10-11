@@ -27,6 +27,14 @@ class BooksController < ApplicationController
   end
 
   def create
+    @book = Book.new(name:params[:book][:name],
+                     author:params[:book][:author],
+                     description:params[:book][:description],
+                     votes: 0)
+   @book.save
+   redirect_to :books
+
   end
+
 
 end
