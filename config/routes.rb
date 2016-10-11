@@ -1,45 +1,11 @@
 Rails.application.routes.draw do
-  get 'albums/index'
 
-  get 'albums/show'
+    root to: 'mediaranker#index'
 
-  get 'albums/eidt'
-
-  get 'albums/update'
-
-  get 'albums/new'
-
-  get 'albums/destroy'
-
-  get 'albums/create'
-
-  get 'books/index'
-
-  get 'books/show'
-
-  get 'books/eidt'
-
-  get 'books/update'
-
-  get 'books/new'
-
-  get 'books/destroy'
-
-  get 'books/create'
-
-  get 'movies/index'
-
-  get 'movies/show'
-
-  get 'movies/eidt'
-
-  get 'movies/update'
-
-  get 'movies/new'
-
-  get 'movies/destroy'
-
-  get 'movies/create'
+     resources :movies
+     resources :books
+     resources :albums
+end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -95,4 +61,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
