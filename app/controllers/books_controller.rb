@@ -1,17 +1,19 @@
 class BooksController < ApplicationController
   def index
+    @books = Book.order(:votes)
   end
 
   def show
   end
 
-  def eidt
+  def edit
   end
 
   def update
   end
 
   def new
+    @book = Book.new
   end
 
   def destroy
