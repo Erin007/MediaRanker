@@ -38,6 +38,10 @@ class AlbumsController < ApplicationController
    redirect_to :albums
   end
 
+  def up_vote
+    album.update_attribute(:votes, (album.votes + 1))
+    redirect_to album_path
+  end
 private
   def album_params
     params.require(:album).permit( :name, :artist, :description, :votes)

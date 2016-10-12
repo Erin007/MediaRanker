@@ -39,9 +39,13 @@ class MoviesController < ApplicationController
     redirect_to :movies
   end
 
+  def up_vote
+    movie.update_attribute(:votes, (movie.votes + 1))
+    redirect_to movie_path
+  end
+
 private
  def movie_params
-   #Tells Rails which parameters can be changed
    params.require(:movie).permit( :name, :director, :description, :votes)
  end
 end

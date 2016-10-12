@@ -39,7 +39,7 @@ class BooksController < ApplicationController
   end
 
   def up_vote
-    book.update_attribute(:votes, (book.votes + 1) )
+    book.update_attribute(:votes, (book.votes + 1))
     redirect_to book_path
   end
 

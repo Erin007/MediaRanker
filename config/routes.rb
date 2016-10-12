@@ -12,6 +12,17 @@ Rails.application.routes.draw do
        end
      end
 
+     resources :movies do
+       member do
+         post 'up_vote'
+       end
+     end
+
+     resources :albums do
+       member do
+         post 'up_vote'
+       end
+     end
 
 
 end
