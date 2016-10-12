@@ -40,7 +40,7 @@ class AlbumsController < ApplicationController
 
   def up_vote
     album.update_attribute(:votes, (album.votes + 1))
-    redirect_to album_path
+    redirect_to(request.referer)
   end
 private
   def album_params

@@ -40,7 +40,7 @@ class BooksController < ApplicationController
 
   def up_vote
     book.update_attribute(:votes, (book.votes + 1))
-    redirect_to book_path
+    redirect_to(request.referer)
   end
 
 private

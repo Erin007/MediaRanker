@@ -41,7 +41,7 @@ class MoviesController < ApplicationController
 
   def up_vote
     movie.update_attribute(:votes, (movie.votes + 1))
-    redirect_to movie_path
+    redirect_to(request.referer)
   end
 
 private

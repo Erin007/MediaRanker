@@ -3,6 +3,7 @@
   <% @movies.each do |movie| %>
       <h2><%= link_to(movie.name, movie_path(movie[:id])) %></h2>
       <h3>Votes: <%=movie.votes.to_s%></h3>
+      <%= button_to "UpVote", {action: "up_vote", id: movie[:id] }, method: :post %>
   <%end %>
 
   <%= link_to( "Add a New Movie", new_movie_path) %>
