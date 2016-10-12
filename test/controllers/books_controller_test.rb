@@ -19,12 +19,6 @@ class BooksControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
-  test "should update a book" do
-    book_params = {id: books(:matilda).id, book:{name: "Matilda!!!"}}
-    patch :update, book_params
-    assert_response :redirect
-  end
-
   test "should get new" do
     get :new
     assert_response :success
@@ -53,5 +47,18 @@ class BooksControllerTest < ActionController::TestCase
     post :create, params
     end
   end
+
+  test "should update a book" do
+    book_params = {id: books(:matilda).id, book:{name: "Matilda!!!"}}
+    patch :update, book_params
+    assert_response :redirect
+  end
+
+  test "should upvote a book" do
+    request.env["HTTP_REFERER"] = "where_i_came_from"
+    post :up_vote,  {id: books(:holes).id }
+    assert_redirected_to("where_i_came_from")
+  end
+
 
 end
