@@ -38,6 +38,10 @@ group :development, :test do
   gem 'better_errors'
 end
 
+group :test do #Lets us do testing in color 
+  gem 'minitest-reporters'
+end
+
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
