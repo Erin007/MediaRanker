@@ -19,11 +19,11 @@ class BooksControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
-  # test "should update a book" do
-  #   get :update, {id: books(:matilda).id }
-  #   assert_response :success
-  #   assert_response :redirect
-  # end
+  test "should update a book" do
+    book_params = {id: books(:matilda).id, book:{name: "Matilda!!!"}}
+    patch :update, book_params
+    assert_response :redirect
+  end
 
   test "should get new" do
     get :new
@@ -53,5 +53,5 @@ class BooksControllerTest < ActionController::TestCase
     post :create, params
     end
   end
-  
+
 end
