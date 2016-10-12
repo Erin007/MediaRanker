@@ -1,4 +1,32 @@
 Rails.application.routes.draw do
+
+    root to: 'mediarankers#index'
+     resources :mediarankers
+     resources :movies
+     resources :books
+     resources :albums
+
+     resources :books do
+       member do
+         post 'up_vote'
+       end
+     end
+
+     resources :movies do
+       member do
+         post 'up_vote'
+       end
+     end
+
+     resources :albums do
+       member do
+         post 'up_vote'
+       end
+     end
+
+
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,4 +81,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
