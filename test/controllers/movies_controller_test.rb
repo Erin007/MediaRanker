@@ -19,8 +19,8 @@ class MoviesControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
-  # test "should update a book" do
-  #   get :update, {id: books(:matilda).id }
+  # test "should update a movie" do
+  #   get :update, {id: movies(:little_mermaid).id }
   #   assert_response :success
   #   assert_response :redirect
   # end
@@ -53,6 +53,5 @@ class MoviesControllerTest < ActionController::TestCase
     post :create, params
     end
   end
-
 
 end
