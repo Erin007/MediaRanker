@@ -1,2 +1,18 @@
-<h1>Albums#show</h1>
-<p>Find me in app/views/albums/show.html.erb</p>
+<div>
+
+  <section>
+    <h1><%= @album.name %></h1>
+    <p>Artist: <%= @album.artist %></p>
+    <p>Votes: <%=@album.votes %></p>
+    <p><%= @album.description%></p>
+
+    <%= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
+
+    <%= button_to "Delete", {action: "destroy", id: @album[:id] }, method: :delete, data: { confirm: "Do you really want to delete this album?"} %>
+
+    <%= link_to( "View All Albums", albums_path) %>
+
+    <%= link_to( "View All Media", root_path) %>
+  </section>
+
+</div>
