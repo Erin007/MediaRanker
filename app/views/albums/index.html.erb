@@ -1,2 +1,10 @@
-<h1>Albums#index</h1>
-<p>Find me in app/views/albums/index.html.erb</p>
+<h1>Albums</h1>
+
+  <% @albums.each do |album| %>
+      <h2><%= link_to(album.name, album_path(album[:id])) %></h2>
+      <h3>Votes: <%=album.votes.to_s%></h3>
+  <%end %>
+
+  <%= link_to( "Add a New Album", new_album_path) %>
+  <%= link_to( "View All Media", root_path) %>
+<!-- <p>Find me in app/views/albums/index.html.erb</p> -->
