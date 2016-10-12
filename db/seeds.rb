@@ -8,7 +8,9 @@ CSV.foreach('seeds_csvs/movies.csv', :headers => true) do |csv_obj|
   Movie.create( name: csv_obj['name'], director: csv_obj['director'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
 end
 
-
+CSV.foreach('seeds_csvs/albums.csv', :headers => true) do |csv_obj|
+  Album.create( name: csv_obj['name'], artist: csv_obj['artist'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
+end
 
 
 
