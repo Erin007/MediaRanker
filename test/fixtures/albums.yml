@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  artist: MyString
-  description: MyString
-  votes: 1
+spiceworld:
+  name: "SpiceWorld"
+  artist: "Spice Girls"
+  description: "'90s British pop sensation'"
+  votes: 10
 
-two:
-  name: MyString
-  artist: MyString
-  description: MyString
-  votes: 1
+no_strings_attached:
+  name: "No Strings Attached"
+  artist: "NSYNC"
+  description: "Because even Justin Timberlake had to start somewhere."
+  votes: 3
