@@ -20,7 +20,8 @@ class BookTest < ActiveSupport::TestCase
     fake_book_nonnum_vote = Book.new ({name: "A Wrinkle in Time", author: "Madeline L'Engle", description: "A young girl must traverse the multiverse to save her quirky brother and father.", votes: "two"})
     assert fake_book_nonnum_vote.invalid?
   end
-
+  
+#I don't think this is entirely necessary. It just seemed like I wasn't really testig much in the model...
   test "Correctly retrieves the attributes of a book" do
     assert_equal books(:holes).name, "Holes"
     assert_equal books(:holes).author, "Louis Sachar"
