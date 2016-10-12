@@ -5,6 +5,15 @@ Rails.application.routes.draw do
      resources :movies
      resources :books
      resources :albums
+
+     resources :books do
+       member do
+         post 'up_vote'
+       end
+     end
+
+
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

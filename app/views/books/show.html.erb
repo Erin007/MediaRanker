@@ -10,6 +10,8 @@
 
     <%= button_to "Delete", {action: "destroy", id: @book[:id] }, method: :delete, data: { confirm: "Do you really want to delete this book?"} %>
 
+    <%= button_to "UpVote", {action: "up_vote", id: @book[:id] }, method: :post %>
+
     <%= link_to( "View All Books", books_path) %>
 
     <%= link_to( "View All Media", root_path) %>

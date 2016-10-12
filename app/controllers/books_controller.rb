@@ -38,6 +38,11 @@ class BooksController < ApplicationController
    redirect_to :books
   end
 
+  def up_vote
+    book.update_attribute(:votes, (book.votes + 1) )
+    redirect_to book_path
+  end
+
 private
    def book_params
      #Tells Rails which parameters can be changed
