@@ -16,7 +16,7 @@ class BookTest < ActiveSupport::TestCase
     assert fake_book_name_author_description.valid?
   end
 
-  test "A books vote attirbute must be a number." do
+  test "A books vote attribute must be a number." do
     fake_book_nonnum_vote = Book.new ({name: "A Wrinkle in Time", author: "Madeline L'Engle", description: "A young girl must traverse the multiverse to save her quirky brother and father.", votes: "two"})
     assert fake_book_nonnum_vote.invalid?
   end
