@@ -22,10 +22,10 @@ class BookTest < ActiveSupport::TestCase
   end
 
   test "Correctly retrieves the attributes of a book" do
-      assert_equal books(:holes).name, "Holes"
-      assert_equal books(:holes).author, "Louis Sachar"
-      assert_equal books(:holes).description, "Deviant youth dig holes in the desert for a lipstick-loving cowgirl"
-      assert_equal books(:holes).votes, 2
+    assert_equal books(:holes).name, "Holes"
+    assert_equal books(:holes).author, "Louis Sachar"
+    assert_equal books(:holes).description, "Deviant youth dig holes in the desert for a lipstick-loving cowgirl"
+    assert_equal books(:holes).votes, 2
   end
-    
+
 end
