@@ -20,12 +20,6 @@ class AlbumsControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
-  # test "should update an album" do
-  #   get :update, {id: albums(:spiceworld).id }
-  #   assert_response :success
-  #   assert_response :redirect
-  # end
-
   test "should get new" do
     get :new
     assert_response :success
@@ -53,6 +47,18 @@ class AlbumsControllerTest < ActionController::TestCase
     params = {album:{name: "Mmmbop", artist: "Hanson", description: "Mmmbop will be stuck in your head for the entire 90s - sorry.", votes: 0}}
     post :create, params
     end
+  end
+
+  test "should update an album" do
+    album_params = {id: albums(:spiceworld).id, album:{name: "SpiceWorld!!!"}}
+    patch :update, album_params
+    assert_response :redirect
+  end
+
+  test "should upvote an album" do
+    request.env["HTTP_REFERER"] = "where_i_came_from"
+    post :up_vote,  {id: albums(:spiceworld).id }
+    assert_redirected_to("where_i_came_from")
   end
 
 

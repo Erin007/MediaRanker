@@ -19,12 +19,6 @@ class MoviesControllerTest < ActionController::TestCase
     assert_template :edit
   end
 
-  # test "should update a movie" do
-  #   get :update, {id: movies(:little_mermaid).id }
-  #   assert_response :success
-  #   assert_response :redirect
-  # end
-
   test "should get new" do
     get :new
     assert_response :success
@@ -52,6 +46,18 @@ class MoviesControllerTest < ActionController::TestCase
     params = {movie:{name: "Land Before Time", director: "Mr. Dinosaur", description: "A never-ending series about cute dinosaurs", votes: 0}}
     post :create, params
     end
+  end
+
+  test "should update a movie" do
+    movie_params = {id: movies(:little_mermaid).id, movie:{name: "Litte Mermaid!!!"}}
+    patch :update, movie_params
+    assert_response :redirect
+  end
+
+  test "should upvote a movie" do
+    request.env["HTTP_REFERER"] = "where_i_came_from"
+    post :up_vote,  {id: movies(:little_mermaid).id }
+    assert_redirected_to("where_i_came_from")
   end
 
 end
