@@ -1,2 +1,33 @@
-<h1>Entertainmentoptions#show</h1>
-<p>Find me in app/views/entertainmentoptions/show.html.erb</p>
+
+<div>
+  <section>
+    <% if @album != nil %>
+      <h1><%= @album.name %></h1>
+      <p>Artist: <%= @album.artist %></p>
+      <p>Votes: <%=@album.votes %></p>
+      <p><%= @album.description%></p>
+
+    <% elsif @movie != nil %>
+      <h1><%= @movie.name %></h1>
+      <p>Director: <%= @movie.director %></p>
+      <p>Votes: <%=@movie.votes %></p>
+      <p><%= @movie.description%></p>
+
+    <% elsif @book != nil %>
+      <h1><%= @book.name %></h1>
+      <p>Author: <%= @book.author %></p>
+      <p>Votes: <%=@book.votes %></p>
+      <p><%= @book.description%></p>
+    <% end %>
+    <!-- <%#= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
+
+    <%#= button_to "Delete", {action: "destroy", id: @album[:id] }, method: :delete, data: { confirm: "Do you really want to delete this album?"} %>
+
+    <%#= button_to "UpVote", {action: "up_vote", id: @album[:id] }, method: :post %>
+
+    <%#= link_to( "View All Albums", albums_path) %> -->
+
+    <%= link_to( "View All Media", root_path) %>
+  </section>
+</div>
+<!-- <p>Find me in app/views/entertainmentoptions/show.html.erb</p> -->
