@@ -1,5 +1,3 @@
-<h1>Entertainmentoptions#index</h1>
-
 <h1>Top 10 Movies</h1>
   <% @movies.limit(10).each do |movie| %>
       <h2><%= link_to(movie.name, entertainmentoption_path(movie[:id])) %></h2>

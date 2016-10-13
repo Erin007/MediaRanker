@@ -34,7 +34,6 @@ class EntertainmentoptionsController < ApplicationController
         @movie = media
       end
     end
-# binding.pry
   end
 
   def edit
@@ -60,14 +59,13 @@ class EntertainmentoptionsController < ApplicationController
   end
 
   def destroy
-    media.destroy
-    redirect_to :entertainmentoption #change this
+    @media = Entertainmentoption.find(params[:id]).destroy
+    redirect_to root_path  #change this
   end
 
   def up_vote
     @media = Entertainmentoption.find(params[:id])
     @media.update_attribute(:votes, (@media.votes + 1))
-    # binding.pry
     redirect_to(request.referer)
   end
 
