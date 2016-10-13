@@ -1,46 +1,6 @@
 Rails.application.routes.draw do
-
-  get 'entertainmentoptions/index'
-
-  get 'entertainmentoptions/new'
-
-  get 'entertainmentoptions/show'
-
-  get 'entertainmentoptions/edit'
-
-  get 'entertainmentoptions/update'
-
-  get 'entertainmentoptions/create'
-
-  get 'entertainmentoptions/destroy'
-
-  get 'entertainmentoptions/up_vote'
-
-    root to: 'mediarankers#index'
-     resources :mediarankers
-     resources :movies
-     resources :books
-     resources :albums
-
-     resources :books do
-       member do
-         post 'up_vote'
-       end
-     end
-
-     resources :movies do
-       member do
-         post 'up_vote'
-       end
-     end
-
-     resources :albums do
-       member do
-         post 'up_vote'
-       end
-     end
-
-
+root to: 'entertainmentoptions#index'
+  resources :entertainmentoptions
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

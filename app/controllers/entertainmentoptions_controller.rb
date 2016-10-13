@@ -28,11 +28,11 @@ class EntertainmentoptionsController < ApplicationController
 
   def create
     @entertainmentoption = Entertainmentoption.new(
-                     mediatype:params[:entertainmentoption][:mediatype]
+                     mediatype:params[:entertainmentoption][:mediatype],
                      name:params[:entertainmentoption][:name],
                      author:params[:entertainmentoption][:author],
                      artist:params[:entertainmentoption][:artist],
-                     director:params[:entertainmentoption][:director]
+                     director:params[:entertainmentoption][:director],
                      description:params[:entertainmentoption][:description],
                      votes: 0)
    @entertainmentoption.save
