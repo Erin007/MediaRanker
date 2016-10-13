@@ -1,16 +1,10 @@
 require "csv"
 
-CSV.foreach('seeds_csvs/books.csv', :headers => true) do |csv_obj|
-  Book.create( name: csv_obj['name'], author: csv_obj['author'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
+CSV.foreach('seeds_csvs/entertainment.csv', :headers => true) do |csv_obj|
+  Entertainmentoption.create(mediatype: csv_obj['mediatype'], name: csv_obj['name'], author: csv_obj['author'], artist: csv_obj['artist'], director: csv_obj['director'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
 end
 
-CSV.foreach('seeds_csvs/movies.csv', :headers => true) do |csv_obj|
-  Movie.create( name: csv_obj['name'], director: csv_obj['director'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
-end
 
-CSV.foreach('seeds_csvs/albums.csv', :headers => true) do |csv_obj|
-  Album.create( name: csv_obj['name'], artist: csv_obj['artist'], description: csv_obj['description'], votes: csv_obj['votes'].to_i)
-end
 
 
 
