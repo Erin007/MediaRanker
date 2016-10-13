@@ -1,5 +1,21 @@
 Rails.application.routes.draw do
 
+  get 'entertainmentoptions/index'
+
+  get 'entertainmentoptions/new'
+
+  get 'entertainmentoptions/show'
+
+  get 'entertainmentoptions/edit'
+
+  get 'entertainmentoptions/update'
+
+  get 'entertainmentoptions/create'
+
+  get 'entertainmentoptions/destroy'
+
+  get 'entertainmentoptions/up_vote'
+
     root to: 'mediarankers#index'
      resources :mediarankers
      resources :movies
