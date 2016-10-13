@@ -24,6 +24,7 @@ class EntertainmentoptionsController < ApplicationController
 
     @entertainmentoptions.each do |media|
       number = params[:id].to_i
+      @media = media
       if media[:id] == number && media[:mediatype] == "book"
         @book = media
       elsif media[:id] == number && media[:mediatype] == "album"
@@ -63,7 +64,7 @@ class EntertainmentoptionsController < ApplicationController
   end
 
   def up_vote
-    media.update_attribute(:votes, (media.votes + 1))
+    @media.update_attribute(:votes, (@media.votes + 1))
     redirect_to(request.referer)
   end
 

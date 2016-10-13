@@ -19,11 +19,17 @@
       <p>Votes: <%=@book.votes %></p>
       <p><%= @book.description%></p>
     <% end %>
+
+    <%= button_to "Delete", {action: "destroy", id: @media[:id] }, method: :delete, data: { confirm: "Do you really want to delete this?"} %>
+
+    <%= button_to "UpVote", {action: "up_vote", id: @media[:id] }, method: :post %>
+
+
     <!-- <%#= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
 
-    <%#= button_to "Delete", {action: "destroy", id: @album[:id] }, method: :delete, data: { confirm: "Do you really want to delete this album?"} %>
 
-    <%#= button_to "UpVote", {action: "up_vote", id: @album[:id] }, method: :post %>
+
+
 
     <%#= link_to( "View All Albums", albums_path) %> -->
 
