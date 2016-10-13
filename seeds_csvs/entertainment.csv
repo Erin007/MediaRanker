@@ -1,0 +1,41 @@
+type,name,author,artist,director,description,votes
+book,Where the Wild Things Are, Maurice Sendak,nil,nil,Let the wild rumpus begin!, 10
+book,Corduroy, Don Freeman,nil,nil, Where's my button?, 9
+book,Alexander and the Terrible Horrible No Good Very Bad Day, Judith Viorst,nil,nil, book,Programmers in Australia see error messages too..., 8
+book,Elephant & Piggie, Mo Wilems,nil,nil, We are in a book!, 7
+book,The Very Hungry Caterpillar, Eric Carle,nil,nil, Munch, munch, munch..., 6
+book,Goodnight Moon, Margaret Wise Brown,nil,nil, Goodnight desk lamp, 5
+book,The Giving Tree, Shel Silverstein,nil,nil,There once was a tree and she loved a little boy, 4
+book,Blueberries for Sal, Robery McClosky,nil,nil, Beware the bears while picking berries!, 3
+book,Stellaluna, Janell Cannon,nil,nil, The cutest fruit bat ever raised by birds, 2
+book,If You Give a Mouse a Cookie, Laura Numeroff,nil,nil, He'll ask for some milk, and then book,he'll need a straw..., 1
+book,The Mitten, Jan Brett,nil,nil, Winter wouldn't be complete without it, 0
+book,Click Clack Moo, Doreen Cronin,nil,nil, Who doesn't love a plucky peaceful bovine protest?, 0
+book,Test, Bill Murray,nil,nil, I need something to delete, 0
+album,The Joshua Tree,nil,U2,nil,YADA YAYDA YADA,21
+album,Appetite for Destruction,nil,Guns N' Roses,nil,YADA YAYDA YADA,9
+album,Strangeways Here We Come,nil,The Smiths,nil,YADA YAYDA YADA,8
+album,Sign 'O' the Times,nil,Prince,nil,YADA YAYDA YADA,5
+album,Document,nil,R.E.M.,nil,YADA YAYDA YADA,10
+album,Bad,nil,Michael Jackson,nil,YADA YAYDA YADA,6
+album,Hysteria,nil,Def Leppard,nil,YADA YAYDA YADA,2
+album,Kick,nil,INXS,nil,YADA YAYDA YADA,8
+album,Tunnel of Love,nil,Bruce Springsteen,nil,YADA YAYDA YADA,43
+album,Nothing Like the Son,nil,Sting,nil,YADA YAYDA YADA,4
+album,Faith,nil,George Michael,nil,YADA YAYDA YADA,3
+album,Tango in the Night,nil,Fleetwood Mac,nil,YADA YAYDA YADA,12
+album,A Momentary Lapse of Reason,nil,Pink Floyd,nil,YADA YAYDA YADA,13
+movie,Finding Nemo,nil,nil,Bill Murray, An estranged clown fish looks for his son with the help of a forgetful fish, 5
+movie,Hunger Games,nil,nil,Bill Murray, Children get picked at random to battle to the death for entertainment, 10
+movie,The Martian,nil,nil,Bill Murray, Home Alone- but on Mars, 50
+movie,Lord of the Rings,nil,nil,Bill Murray, Group spends 9 hours returning jewelry, 6
+movie,The Shining,nil,nil,Bill Murray, A family's first Airbnb experience goes very wrong, 4
+movie,Indiana Jones,nil,nil,Bill Murray, Professor has unusually productive sabbatical, 10
+movie,The Sixth Sense,nil,nil,Bill Murray, He is a ghost, 20
+movie,Lion King,nil,nil,Bill Murray, Hamlet with lions, 60
+movie,Fight Club,nil,nil,Bill Murray, 2 guys is actually just one guy, 12
+movie,Star Wars,nil,nil,Bill Murray, Old man abducts and religiously indoctrinates young farm worker in order to save a galaxy, 6
+movie,Toy Story,nil,nil,Bill Murray, A cowboy rescues an astronaut from a psychopath, 22
+movie,Avatar,nil,nil,Bill Murray, Cultural appropriation in space, 3
+movie,Inception,nil,nil,Bill Murray, A series of naps, 14
+movie,Test,nil,nil,Bill Murray, I need something to delete, 0
