@@ -1,3 +1,4 @@
+
 class EntertainmentoptionsController < ApplicationController
   def media
     @entertainmentoption ||= Entertainmentoption.find(params[:id].to_i)
@@ -10,7 +11,7 @@ class EntertainmentoptionsController < ApplicationController
   end
 
   def new
-      @entertainmentoption = Entertainmentoption.new
+    @entertainmentoption = Entertainmentoption.new
   end
 
   def show
@@ -21,7 +22,10 @@ class EntertainmentoptionsController < ApplicationController
 
     @entertainmentoptions.each do |media|
       number = params[:id].to_i
-      @media = media
+      if media[:id] == number
+        @media = media
+      end
+
       if media[:id] == number && media[:mediatype] == "book"
         @book = media
       elsif media[:id] == number && media[:mediatype] == "album"
@@ -30,7 +34,7 @@ class EntertainmentoptionsController < ApplicationController
         @movie = media
       end
     end
-
+# binding.pry
   end
 
   def edit
@@ -61,7 +65,9 @@ class EntertainmentoptionsController < ApplicationController
   end
 
   def up_vote
-    media.update_attribute(:votes, (media.votes + 1))
+    @media = Entertainmentoption.find(params[:id])
+    @media.update_attribute(:votes, (@media.votes + 1))
+    # binding.pry
     redirect_to(request.referer)
   end
 
