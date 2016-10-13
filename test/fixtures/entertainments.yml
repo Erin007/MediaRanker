@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  name: MyString
+  author: MyString
+  artist: MyString
+  director: MyString
+  description: MyText
+  votes: 1
+
+two:
+  type: 
+  name: MyString
+  author: MyString
+  artist: MyString
+  director: MyString
+  description: MyText
+  votes: 1

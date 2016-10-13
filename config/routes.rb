@@ -1,29 +1,7 @@
 Rails.application.routes.draw do
 
-    root to: 'mediarankers#index'
-     resources :mediarankers
-     resources :movies
-     resources :books
-     resources :albums
-
-     resources :books do
-       member do
-         post 'up_vote'
-       end
-     end
-
-     resources :movies do
-       member do
-         post 'up_vote'
-       end
-     end
-
-     resources :albums do
-       member do
-         post 'up_vote'
-       end
-     end
-
+root to: 'entertainments#index'
+  resources :entertainments
 
 end
 
