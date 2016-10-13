@@ -1,9 +1,6 @@
 class EntertainmentoptionsController < ApplicationController
   def media
     @entertainmentoption ||= Entertainmentoption.find(params[:id].to_i)
-    @book = Entertainmentoption.find(params[:id].to_i)
-    @album = Entertainmentoption.find(params[:id].to_i)
-    @movie = Entertainmentoption.find(params[:id].to_i)
   end
 
   def index
@@ -64,12 +61,12 @@ class EntertainmentoptionsController < ApplicationController
   end
 
   def up_vote
-    @media.update_attribute(:votes, (@media.votes + 1))
+    media.update_attribute(:votes, (media.votes + 1))
     redirect_to(request.referer)
   end
 
 private
-     def media_params
+    def media_params
        params.require(:entertainmentoption).permit( :mediatype, :name, :author, :artist, :director, :description, :votes)
-     end
+    end
 end
