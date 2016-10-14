@@ -96,6 +96,15 @@ div .buttons *, .voting *{
 .show-one p {
   font-size: 1.5em;
 }
+
+.show-picture {
+  align: right;
+  width: 60%;
+  /*margin: 1%;
+  display: inline-block;*/
+  /*margin-left: 3%;*/
+}
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
