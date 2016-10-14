@@ -69,6 +69,21 @@ class EntertainmentoptionsController < ApplicationController
     redirect_to(request.referer)
   end
 
+  def full_list
+    @book = nil
+    @album = nil
+    @movie = nil
+    request.inspect
+    if request.referer.include?('movie')
+      @movies = Entertainmentoption.where(mediatype: 'movie').order(:votes).reverse_order
+    elsif request.referer.include?('book')
+      @books = Entertainmentoption.where(mediatype: 'book').order(:votes).reverse_order
+    elsif request.referer.include?('album')
+      @albums = Entertainmentoption.where(mediatype: 'album').order(:votes).reverse_order
+    end
+
+  end
+
 private
     def media_params
        params.require(:entertainmentoption).permit( :mediatype, :name, :author, :artist, :director, :description, :votes)

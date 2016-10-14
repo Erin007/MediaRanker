@@ -7,6 +7,8 @@ root to: 'entertainmentoptions#index'
     end
   end
 
+  get 'entertainmentoptions/full_list', to: 'entertainmentoptions#full_list'
+
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

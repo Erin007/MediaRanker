@@ -1,0 +1,24 @@
+<div>
+  <section>
+
+    <% if @albums != nil %>
+      <h1>Albums</h1>
+      <% @albums.each do |album| %>
+        <h2><%= link_to(album.name, entertainmentoption_path(album[:id])) %></h2>
+        <h3>Votes: <%=album.votes.to_s%></h3>
+      <%end %>
+
+    <% elsif @movies != nil%>
+      <h1>Movies</h1>
+      <% @movies.each do |movie| %>
+          <h2><%= link_to(movie.name, entertainmentoption_path(movie[:id])) %></h2>
+          <h3>Votes: <%=movie.votes.to_s%></h3>
+      <%end %>
+
+    <% elsif @books != nil %>
+      <h1>Books</h1>
+        <% @books.limit(10).each do |book| %>
+            <h2><%= link_to(book.name, entertainmentoption_path(book[:id])) %></h2>
+            <h3>Votes: <%=book.votes.to_s%></h3>
+        <%end %>
+    <%end %>
