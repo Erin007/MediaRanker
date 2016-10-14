@@ -1,11 +1,14 @@
-<h1>Albums</h1>
+<section class="full-list">
 
+<h1>Albums</h1>
   <% @albums.each do |album| %>
       <h2><%= link_to(album.name, album_path(album[:id])) %></h2>
       <h3>Votes: <%=album.votes.to_s%></h3>
       <%= button_to "UpVote", {action: "up_vote", id: album[:id] }, method: :post %>
+      <hr>
   <%end %>
 
-  <%= link_to( "Add a New Album", new_album_path) %>
-  <%= link_to( "View All Media", root_path) %>
+  <p><%= link_to( "Add a New Album", new_album_path) %></p>
+  <p><%= link_to( "View All Media", root_path) %><p>
+</section>
 <!-- <p>Find me in app/views/albums/index.html.erb</p> -->

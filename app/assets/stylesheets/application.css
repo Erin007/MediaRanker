@@ -24,7 +24,7 @@ body {
   color: #efefef;
 }
 
-.show-one, .form-new {
+.show-one, .form-new, .full-list {
 padding: 5%;
 }
 
@@ -45,6 +45,10 @@ h2 a:hover, p a{
   color: #dd1b1b;
 }
 
+p a:hover {
+  color:  #2B2B2B;
+}
+
 footer p{
   border-top: solid 5px #dd1b1b;
   clear: both;
@@ -54,6 +58,18 @@ footer p{
   padding-bottom: 3%;
   background-color: #2B2B2B;
   color: #efefef;
+}
+
+.up-vote {
+  display: inline;
+}
+
+.upvote-button {
+  background-color: #dd1b1b;
+}
+
+div .buttons *{
+  display:inline;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

@@ -6,14 +6,13 @@
     <p><b>Votes: </b><%=@album.votes %></p>
     <p><%= @album.description%></p>
 
-    <%= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
-
-    <%= button_to "Delete", {action: "destroy", id: @album[:id] }, method: :delete, data: { confirm: "Do you really want to delete this album?"} %>
-
-    <%= button_to "UpVote", {action: "up_vote", id: @album[:id] }, method: :post %>
-
+    <div class = "buttons">
+      <%= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
+      <%= button_to "Delete", {action: "destroy", id: @album[:id] }, method: :delete, data: { confirm: "Do you really want to delete this album?"} %>
+      <%= button_to "UpVote", {action: "up_vote", id: @album[:id] }, method: :post %>
+    </div>
+    <p></p>
     <p><%= link_to( "View All Albums", albums_path) %></p>
-
     <p><%= link_to( "View All Media", root_path) %></p>
   </section>
 
