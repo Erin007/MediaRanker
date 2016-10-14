@@ -4,7 +4,7 @@
       <h2><%= link_to(movie.name, movie_path(movie[:id])) %></h2>
       <div class="voting">
         <h3><b>Votes:</b> <%=movie.votes.to_s%></h3>
-        <p><%= button_to "👍🏼", {action: "up_vote", id: movie[:id] }, method: :post %></p>
+        <p><%= link_to "👍🏼", {action: "up_vote", id: movie[:id] }, method: :post %></p>
       </div>
       <hr>
   <%end %>

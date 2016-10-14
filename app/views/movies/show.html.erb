@@ -6,9 +6,9 @@
 
     <div class="voting">
       <h3><b>Votes:</b> <%=@movie.votes%></h3>
-      <p><%= button_to "👍🏼", {action: "up_vote", id: @movie[:id] }, method: :post %></p>
+      <p><%= link_to "👍🏼", {action: "up_vote", id: @movie[:id] }, method: :post %></p>
     </div>
-
+    <p></p>
     <p><%= @movie.description%></p>
 
     <div class = "buttons">

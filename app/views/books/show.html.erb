@@ -6,15 +6,14 @@
 
     <div class="voting">
       <h3><b>Votes:</b> <%=@book.votes%></h3>
-      <p><%= button_to "👍🏼", {action: "up_vote", id: @book[:id] }, method: :post %></p>
+      <p><%= link_to "👍🏼", {action: "up_vote", id: @book[:id] }, method: :post %></p>
     </div>
-  
+    <p></p>
     <p><%= @book.description%></p>
 
     <div class = "buttons">
       <%= button_to "Edit", {action: "edit", id: @book[:id] }, method: :get %>
       <%= button_to "Delete", {action: "destroy", id: @book[:id] }, method: :delete, data: { confirm: "Do you really want to delete this book?"} %>
-      <%= button_to "UpVote", {action: "up_vote", id: @book[:id] }, method: :post %>
     </div>
     <p></p>
     <p><%= link_to( "View All Books", books_path) %></p>
