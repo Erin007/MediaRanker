@@ -5,19 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+<link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Ek+Mukta" rel="stylesheet">
 </head>
 <body>
-  <header>
+<header>
   <h1 class="all-page-header"><%= link_to("Media Ranker", root_path)%></h1>
-  <hr>
+
 </header>
 
 <%= yield %>
 
 <footer>
-  <hr>
+
 <p>
-  &copy Erin 2016 
+  &copy Erin 2016
 </p>
 
 </footer>
