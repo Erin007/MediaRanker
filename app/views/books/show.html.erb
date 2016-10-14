@@ -1,9 +1,9 @@
 <div>
 
-  <section>
+  <section class= "show-one">
     <h1><%= @book.name %></h1>
-    <p>By: <%= @book.author %></p>
-    <p>Votes: <%=@book.votes %></p>
+    <p><b>By:</b> <%= @book.author %></p>
+    <p><b>Votes:</b> <%=@book.votes %></p>
     <p><%= @book.description%></p>
 
     <%= button_to "Edit", {action: "edit", id: @book[:id] }, method: :get %>
@@ -12,9 +12,9 @@
 
     <%= button_to "UpVote", {action: "up_vote", id: @book[:id] }, method: :post %>
 
-    <%= link_to( "View All Books", books_path) %>
+    <p><%= link_to( "View All Books", books_path) %></p>
 
-    <%= link_to( "View All Media", root_path) %>
+    <p><%= link_to( "View All Media", root_path) %></p>
   </section>
 
 </div>

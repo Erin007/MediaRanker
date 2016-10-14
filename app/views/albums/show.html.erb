@@ -1,9 +1,9 @@
 <div>
 
-  <section>
+  <section class= "show-one">
     <h1><%= @album.name %></h1>
-    <p>Artist: <%= @album.artist %></p>
-    <p>Votes: <%=@album.votes %></p>
+    <p><b>Artist:</b> <%= @album.artist %></p>
+    <p><b>Votes: </b><%=@album.votes %></p>
     <p><%= @album.description%></p>
 
     <%= button_to "Edit", {action: "edit", id: @album[:id] }, method: :get %>
@@ -12,9 +12,9 @@
 
     <%= button_to "UpVote", {action: "up_vote", id: @album[:id] }, method: :post %>
 
-    <%= link_to( "View All Albums", albums_path) %>
+    <p><%= link_to( "View All Albums", albums_path) %></p>
 
-    <%= link_to( "View All Media", root_path) %>
+    <p><%= link_to( "View All Media", root_path) %></p>
   </section>
 
 </div>

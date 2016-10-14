@@ -1,9 +1,9 @@
 <div>
 
-  <section>
+  <section class= "show-one">
     <h1><%= @movie.name %></h1>
-    <p>Directed by:<%= @movie.director %></p>
-    <p>Votes: <%=@movie.votes %></p>
+    <p><b>Directed by:</b><%= @movie.director %></p>
+    <p><b>Votes:</b> <%=@movie.votes %></p>
     <p><%= @movie.description%></p>
 
     <%= button_to "Edit", {action: "edit", id: @movie[:id] }, method: :get %>
@@ -12,9 +12,9 @@
 
     <%= button_to "UpVote", {action: "up_vote", id: @movie[:id] }, method: :post %>
 
-    <%= link_to( "View All Movies", movies_path) %>
+    <p><%= link_to( "View All Movies", movies_path) %></p>
 
-    <%= link_to( "View All Media", root_path) %>
+    <p><%= link_to( "View All Media", root_path) %></p>
   </section>
 
 </div>
