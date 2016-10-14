@@ -3,13 +3,17 @@
   <section class= "show-one">
     <h1><%= @movie.name %></h1>
     <p><b>Directed by:</b><%= @movie.director %></p>
-    <p><b>Votes:</b> <%=@movie.votes %></p>
+
+    <div class="voting">
+      <h3><b>Votes:</b> <%=@movie.votes%></h3>
+      <p><%= button_to "👍🏼", {action: "up_vote", id: @movie[:id] }, method: :post %></p>
+    </div>
+
     <p><%= @movie.description%></p>
 
     <div class = "buttons">
       <%= button_to "Edit", {action: "edit", id: @movie[:id] }, method: :get %>
       <%= button_to "Delete", {action: "destroy", id: @movie[:id] }, method: :delete, data: { confirm: "Do you really want to delete this movie?"} %>
-      <%= button_to "UpVote", {action: "up_vote", id: @movie[:id] }, method: :post %>
     </div>
     <p></p>
     <p><%= link_to( "View All Movies", movies_path) %></p>

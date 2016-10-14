@@ -60,16 +60,12 @@ footer p{
   color: #efefef;
 }
 
-.up-vote {
-  display: inline;
-}
-
-.upvote-button {
-  background-color: #dd1b1b;
-}
-
-div .buttons *{
+div .buttons *, .voting *{
   display:inline;
+}
+
+#spacer {
+  color: #efefef;
 }
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files

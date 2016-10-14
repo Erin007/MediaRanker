@@ -3,7 +3,12 @@
   <section class= "show-one">
     <h1><%= @book.name %></h1>
     <p><b>By:</b> <%= @book.author %></p>
-    <p><b>Votes:</b> <%=@book.votes %></p>
+
+    <div class="voting">
+      <h3><b>Votes:</b> <%=@book.votes%></h3>
+      <p><%= button_to "👍🏼", {action: "up_vote", id: @book[:id] }, method: :post %></p>
+    </div>
+  
     <p><%= @book.description%></p>
 
     <div class = "buttons">

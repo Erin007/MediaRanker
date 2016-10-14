@@ -3,7 +3,12 @@
   <section class= "show-one">
     <h1><%= @album.name %></h1>
     <p><b>Artist:</b> <%= @album.artist %></p>
-    <p><b>Votes: </b><%=@album.votes %></p>
+
+    <div class="voting">
+      <h3><b>Votes:</b> <%=@album.votes%></h3>
+      <p><%= button_to "👍🏼", {action: "up_vote", id: @album[:id] }, method: :post %></p>
+    </div>
+    
     <p><%= @album.description%></p>
 
     <div class = "buttons">
