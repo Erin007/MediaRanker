@@ -25,8 +25,10 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should delete a book" do
+    assert_includes(Book.all, books(:holes), "Yes that object exists." )
     delete :destroy, {id: books(:holes).id }
     assert_response :redirect
+    refute_includes(Book.all, books(:holes), "That object does not exist." )
   end
 
   test "deleting a book should change the number of books" do

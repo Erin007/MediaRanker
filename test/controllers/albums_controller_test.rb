@@ -26,7 +26,9 @@ class AlbumsControllerTest < ActionController::TestCase
   end
 
   test "should delete an album" do
+    assert_includes(Album.all, albums(:spiceworld), "Yes that object exists." )
     delete :destroy, {id: albums(:spiceworld).id }
+    refute_includes(Album.all, albums(:spiceworld), "That object does not exist." )
     assert_response :redirect
   end
 
