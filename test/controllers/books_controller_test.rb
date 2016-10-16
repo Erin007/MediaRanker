@@ -24,10 +24,11 @@ class BooksControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should delete a book" do
+  test "should delete a book that exists and NOT flash a notification" do
     assert_includes(Book.all, books(:holes), "Yes that object exists." )
     delete :destroy, {id: books(:holes).id }
-    assert_response :redirect
+    refute_equal flash[:notice], "That book does not exist."
+    assert_redirected_to :books
     refute_includes(Book.all, books(:holes), "That object does not exist." )
   end
 
@@ -35,6 +36,15 @@ class BooksControllerTest < ActionController::TestCase
     assert_difference("Book.count", -1) do
     delete :destroy,  {id: books(:holes).id }
     end
+  end
+
+  test "attempting to delete a book that doesn't exist should flash a notification" do
+    assert_includes(Book.all, books(:holes), "Yes that object exists." )
+    delete :destroy, {id: books(:holes).id }
+    refute_includes(Book.all, books(:holes), "That object does not exist." )
+    delete :destroy, {id: books(:holes).id }
+    assert_equal flash[:notice], "That book does not exist."
+    assert_redirected_to :books
   end
 
   test "should create a book" do
