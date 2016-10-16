@@ -89,13 +89,10 @@ div .buttons *, .voting *{
   display:inline;
 }
 
-.voting p {
+.voting p, .show-one p, .full-list p {
   font-size: 1.5em;
 }
 
-.show-one p {
-  font-size: 1.5em;
-}
 
 .show-one {
   padding-left: 5%;
@@ -104,6 +101,7 @@ div .buttons *, .voting *{
 
 ul {
   list-style-type: none;
+  padding-left: 3%;
 }
 
 li {
@@ -115,11 +113,16 @@ font-size: 1.5em;
 }
 /*#show {
   display: inline-block;
-}
+}*/
 
 #show img {
   float: right;
-}*/
+  width: 50%;
+  padding-right: 20%;
+  padding-bottom: 5%;
+  margin-top: -30%;
+}
+
 /*.show-picture {
   align: right;
   width: 60%;
