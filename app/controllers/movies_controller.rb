@@ -26,8 +26,13 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    movie.destroy
-    redirect_to :movies
+    if Movie.exists?(params[:id].to_i)
+      movie.destroy
+      redirect_to :movies
+    else
+      flash[:notice] = "That movie does not exist."
+      redirect_to :movies
+    end
   end
 
   def create
