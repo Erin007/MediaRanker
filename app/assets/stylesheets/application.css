@@ -49,7 +49,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.show-one, .form-new, .full-list {
+ .form-new, .full-list {
 padding: 5%;
 }
 
@@ -97,13 +97,35 @@ div .buttons *, .voting *{
   font-size: 1.5em;
 }
 
-.show-picture {
+.show-one {
+  padding-left: 5%;
+  padding-top: 5%;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: block;
+}
+
+li p {
+font-size: 1.5em;
+}
+/*#show {
+  display: inline-block;
+}
+
+#show img {
+  float: right;
+}*/
+/*.show-picture {
   align: right;
   width: 60%;
   /*margin: 1%;
   display: inline-block;*/
   /*margin-left: 3%;*/
-}
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
