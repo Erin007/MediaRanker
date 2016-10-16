@@ -50,7 +50,7 @@ body {
 }
 
  .form-new, .full-list {
-padding: 5%;
+   padding: 5%;
 }
 
 h2 a, h3 {
@@ -62,9 +62,6 @@ h2 a {
   font-size: .75em;
 }
 
-h3 {
-  font-size: 1.5em;
-}
 
 h2 a:hover, p a{
   color: #dd1b1b;
@@ -89,7 +86,7 @@ div .buttons *, .voting *{
   display:inline;
 }
 
-.voting p, .show-one p, .full-list p {
+.voting p, .show-one p, .full-list p, h3, li p {
   font-size: 1.5em;
 }
 
@@ -108,13 +105,6 @@ li {
   display: block;
 }
 
-li p {
-font-size: 1.5em;
-}
-/*#show {
-  display: inline-block;
-}*/
-
 #show img {
   float: right;
   width: 50%;
@@ -122,13 +112,6 @@ font-size: 1.5em;
   padding-bottom: 5%;
   margin-top: -25%;
 }
-
-/*.show-picture {
-  align: right;
-  width: 60%;
-  /*margin: 1%;
-  display: inline-block;*/
-  /*margin-left: 3%;*/
 
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
