@@ -1,5 +1,5 @@
-<div>
-  <section class= "show-one">
+<div id="show" class ="row">
+  <section class= "show-one" class = "small-12, medium-6, large-4 columns">
     <h1><%= @movie.name %></h1>
     <p><b>Directed by:</b><%= @movie.director %></p>
 
@@ -14,9 +14,18 @@
       <%= button_to "Edit", {action: "edit", id: @movie[:id] }, method: :get %>
       <%= button_to "Delete", {action: "destroy", id: @movie[:id] }, method: :delete, data: { confirm: "Do you really want to delete this movie?"} %>
     </div>
-    <p></p>
-    <p><%= link_to( "View All Movies", movies_path) %></p>
-    <p><%= link_to( "View All Media", root_path) %></p>
   </section>
+    <p></p>
+
+  <section class= "show-one" class = "small-12, medium-8, large-6 columns">
+    <% if @movie[:image] != nil%>
+      <image class="show-picture", size="10"><%= image_tag(@movie.image) %></image>
+    <%end%>
+  </section>
+
+    <ul>
+      <li><p><%= link_to( "View All Movies", movies_path) %></p></li>
+      <li><p><%= link_to( "View All Media", root_path) %></p></li>
+    </ul>
 
 </div>

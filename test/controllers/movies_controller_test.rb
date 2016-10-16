@@ -25,6 +25,7 @@ class MoviesControllerTest < ActionController::TestCase
   end
 
   test "should delete a movie" do
+    # assert_includes(movies, id: movies(:little_mermaid).id, "Yes that object exists." )
     delete :destroy, {id: movies(:little_mermaid).id }
     assert_response :redirect
   end
