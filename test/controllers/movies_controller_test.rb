@@ -24,16 +24,28 @@ class MoviesControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should delete a movie" do
-    # assert_includes(movies, id: movies(:little_mermaid).id, "Yes that object exists." )
+  test "should delete a movie that exists and NOT flash a notification" do
+    assert_includes(Movie.all, movies(:little_mermaid), "Yes that object exists." )
     delete :destroy, {id: movies(:little_mermaid).id }
-    assert_response :redirect
+    refute_equal flash[:notice], "That movie does not exist."
+    assert_redirected_to :movies
+    refute_includes(Movie.all, movies(:little_mermaid), "That object does not exist." )
   end
+
 
   test "deleting a movie should change the number of movies" do
     assert_difference("Movie.count", -1) do
     delete :destroy,  {id: movies(:little_mermaid).id }
     end
+  end
+
+  test "attempting to delete a movie that doesn't exist should flash a notification" do
+    assert_includes(Movie.all, movies(:little_mermaid), "Yes that object exists." )
+    delete :destroy, {id: movies(:little_mermaid).id }
+    refute_includes(Movie.all, movies(:little_mermaid), "That object does not exist." )
+    delete :destroy, {id: movies(:little_mermaid).id }
+    assert_equal flash[:notice], "That movie does not exist."
+    assert_redirected_to :movies
   end
 
   test "should create a movie" do

@@ -25,8 +25,13 @@ class AlbumsController < ApplicationController
   end
 
   def destroy
+    if Album.exists?(params[:id].to_i)
     album.destroy
     redirect_to :albums
+    else
+      flash[:notice] = "That album does not exist."
+      redirect_to :albums
+    end
   end
 
   def create

@@ -25,8 +25,13 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book.destroy
-    redirect_to :books
+    if Book.exists?(params[:id].to_i)
+      book.destroy
+      redirect_to :books
+    else
+      flash[:notice] = "That book does not exist."
+      redirect_to :books
+    end
   end
 
   def create

@@ -14,7 +14,6 @@ class AlbumTest < ActiveSupport::TestCase
 
     fake_album_name_artist_description = Album.new ({name: "Mmmbop", artist: "Hanson", description: "Mmmbop will be stuck in your head for the entire 90s - sorry.", votes: 0})
     assert fake_album_name_artist_description.valid?
-
   end
 
   test "An album's votes attirbute must be a number." do
