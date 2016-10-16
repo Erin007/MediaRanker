@@ -25,17 +25,27 @@ class AlbumsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should delete an album" do
+  test "should delete an album that exists and NOT flash a notification" do
     assert_includes(Album.all, albums(:spiceworld), "Yes that object exists." )
     delete :destroy, {id: albums(:spiceworld).id }
+    refute_equal flash[:notice], "That album does not exist."
+    assert_redirected_to :albums
     refute_includes(Album.all, albums(:spiceworld), "That object does not exist." )
-    assert_response :redirect
   end
 
   test "deleting an album should change the number of albums" do
     assert_difference("Album.count", -1) do
     delete :destroy,  {id: albums(:spiceworld).id }
     end
+  end
+
+  test "attempting to delete an album that doesn't exist should flash a notification" do
+    assert_includes(Album.all, albums(:spiceworld), "Yes that object exists." )
+    delete :destroy, {id: albums(:spiceworld).id }
+    refute_includes(Album.all, albums(:spiceworld), "That object does not exist." )
+    delete :destroy, {id: albums(:spiceworld).id }
+    assert_equal flash[:notice], "That album does not exist."
+    assert_redirected_to :albums
   end
 
   test "should create an album" do
